@@ -1,12 +1,12 @@
 '''
-Description: data interface
-Author: SciK
+Author: scikkk 203536673@qq.com
 Date: 2022-07-07 00:13:01
-LastEditors: SciK
-LastEditTime: 2022-07-10 00:23:24
-FilePath: \mypinyin\src\hmm\train\freqdata.py
+LastEditors: scikkk
+LastEditTime: 2022-07-10 01:12:42
+Description: dataset api
 '''
-words_path = '.\\data\\wordfreq.txt'
+
+words_path = 'db\\wordfreq.txt'
 
 
 def wordfreq() -> tuple:

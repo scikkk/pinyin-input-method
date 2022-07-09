@@ -1,11 +1,11 @@
 '''
-Description: configuration file
-Author: SciK
+Author: scikkk 203536673@qq.com
 Date: 2022-07-08 14:38:44
-LastEditors: SciK
-LastEditTime: 2022-07-10 00:22:41
-FilePath: \mypinyin\src\conf\config.py
+LastEditors: scikkk
+LastEditTime: 2022-07-10 01:14:51
+Description: configuration file
 '''
+
 TRAIN_CONFIG = {
     'intact_weight': 21,
     'zcs_weight': 6,

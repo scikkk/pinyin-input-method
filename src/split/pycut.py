@@ -1,16 +1,17 @@
 '''
-Description: split Pinyin
-Author: SciK
+Author: scikkk 203536673@qq.com
 Date: 2022-07-07 02:11:23
-LastEditors: SciK
-LastEditTime: 2022-07-10 00:25:55
-FilePath: \mypinyin\src\split\pycut.py
+LastEditors: scikkk
+LastEditTime: 2022-07-10 01:35:10
+Description: split Pinyin
 
 拼音数据来源: https://blog.csdn.net/Likianta/article/details/87871183
 划分算法参考: https://www.jianshu.com/p/3e83129d70e2
 '''
 
 from conf.config import CUT_CONFIG
+
+
 pytable = []
 # load Pinyin table from file
 with open('db\\pinyin.txt', 'r', encoding='utf-8') as f:
@@ -56,25 +57,25 @@ def pysplit(pinyin: str, pinyin_table=pytable) -> tuple:
     return tuple(correct_res+res)
 
 
-def DP_split(res, pinyin, pinyin_table, pinyin_list=[]) -> None:
+def DP_split(res, pinyin, pinyin_table, pre_pinyin_list=[]) -> None:
     """
     Split the sequence recursively.
 
     :param res: the list to save the split result
     :param pinyin: the Pinyin sequence to be split
     :param pinyin_table: Pinyin table
-    :param pinyin_list: pass previous result to next function call
+    :param pre_pinyin_list: pass previous result to next function call
     """
-    pinyinLen = len(pinyin)
-    for i in range(0, pinyinLen + 1):
-        pList = [x for x in pinyin_list]
+    pinyin_len = len(pinyin)
+    for i in range(0, pinyin_len + 1):
+        pinyin_list = [x for x in pre_pinyin_list]  # deepcopy
         if pinyin[0:i] in pinyin_table:
-            if i == pinyinLen:
-                pList.append(pinyin[0:i])
-                res.append(tuple(pList))
+            if i == pinyin_len:
+                pinyin_list.append(pinyin[0:i])
+                res.append(tuple(pinyin_list))
             else:
-                pList.append(pinyin[0:i])
-                DP_split(res, pinyin[i:], pinyin_table, pList)
+                pinyin_list.append(pinyin[0:i])
+                DP_split(res, pinyin[i:], pinyin_table, pinyin_list)
 
 
 if __name__ == '__main__':

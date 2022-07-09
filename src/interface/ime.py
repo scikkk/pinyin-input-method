@@ -1,11 +1,11 @@
 '''
-Description: IMeMainWindow class
-Author: SciK
+Author: scikkk 203536673@qq.com
 Date: 2022-07-07 21:37:04
-LastEditors: SciK
-LastEditTime: 2022-07-10 00:27:17
-FilePath: \mypinyin\src\interface\ime.py
+LastEditors: scikkk
+LastEditTime: 2022-07-10 01:45:30
+Description: IMeMainWindow class
 '''
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow
 from hmm.hmm import HMM
@@ -37,6 +37,7 @@ class IMeMainWindow(QMainWindow):
         self.page_num = 0
 
     def reset(self) -> None:
+        """ Reset some variables."""
         self.page_num = 0
         self.candidate = []
         self.pinyin_lists = []
@@ -63,7 +64,13 @@ class IMeMainWindow(QMainWindow):
                 self.ui.textEdit.clear()
                 self.display_candidates(self.page_num)
 
-    def display_candidates(self, page_num, last_page_bias=0):
+    def display_candidates(self, page_num: int, last_page_bias=0) -> None:
+        """
+        Show up to ten candidate Chinese character sequences on screen.
+
+        :param page_num: the number of the page to be shown
+        :param last_page_bias: the difference between the previous page number and the current number
+        """
         pinyin = "\'".join(self.pinyin_lists[self.page_num])
         last_pinyin = "\'".join(self.pinyin_lists[page_num+last_page_bias])
         # print(last_pinyin,' -> ',pinyin)
@@ -75,6 +82,11 @@ class IMeMainWindow(QMainWindow):
             self.ui.textEdit.moveCursor(QTextCursor.Start)
 
     def turn_page(self, step: int) -> None:
+        """
+        Turn pages of candidate Chinese character sequences.
+
+        :param step: number of pages to be turned
+        """
         if 0 <= self.page_num + step < len(self.candidate):
             self.page_num += step
             self.ui.textEdit.clear()
@@ -97,7 +109,11 @@ class IMeMainWindow(QMainWindow):
         """
         Function executed when the key is released.
         The self.process function is called every time one key released to realize real-time interaction, and decide whether to turn the page or select a sentence according to the released key.
+
+        :param e: the key just released
+        :type e: PyQt5.QtGui.QKeyEvent
         """
+        print(type(e))
         if e.key() in [Qt.Key_Left,  Qt.Key_Right]:
             return
         self.process()
