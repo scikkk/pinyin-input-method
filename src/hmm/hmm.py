@@ -1,8 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-HMM class
-参考https://zh.wikipedia.org/wiki/维特比算法
-"""
+'''
+Description: HMM class
+Author: SciK
+Date: 2022-07-07 13:55:21
+LastEditors: SciK
+LastEditTime: 2022-07-10 00:25:24
+FilePath: \mypinyin\src\hmm\hmm.py
+'''
+
 from util.tools import load_json
 
 

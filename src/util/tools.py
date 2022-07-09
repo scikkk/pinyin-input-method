@@ -1,3 +1,11 @@
+'''
+Description: some general tool functions
+Author: SciK
+Date: 2022-07-07 14:01:55
+LastEditors: SciK
+LastEditTime: 2022-07-10 00:26:25
+FilePath: \mypinyin\src\util\tools.py
+'''
 import json
 
 

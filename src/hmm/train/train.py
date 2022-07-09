@@ -1,8 +1,11 @@
 '''
+Description: Generate parameters of HMM
 Author: SciK
-Date: 2022-07-04
+Date: 2022-07-08 16:28:16
+LastEditors: SciK
+LastEditTime: 2022-07-10 00:24:03
+FilePath: \mypinyin\src\hmm\train\train.py
 '''
-
 from math import log
 
 # 用于加载词频数据

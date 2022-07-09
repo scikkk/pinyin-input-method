@@ -1,3 +1,11 @@
+'''
+Description: data interface
+Author: SciK
+Date: 2022-07-07 00:13:01
+LastEditors: SciK
+LastEditTime: 2022-07-10 00:23:24
+FilePath: \mypinyin\src\hmm\train\freqdata.py
+'''
 words_path = '.\\data\\wordfreq.txt'
 
 

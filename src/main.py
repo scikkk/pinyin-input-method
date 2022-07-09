@@ -1,9 +1,9 @@
 '''
-Description: 
+Description: program entry
 Author: SciK
 Date: 2022-07-07 21:55:15
 LastEditors: SciK
-LastEditTime: 2022-07-09 22:31:04
+LastEditTime: 2022-07-10 00:27:11
 FilePath: \mypinyin\src\main.py
 '''
 import sys

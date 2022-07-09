@@ -1,6 +1,10 @@
 '''
-author: SciK
-date: 2022-07-04
+Description: split Pinyin
+Author: SciK
+Date: 2022-07-07 02:11:23
+LastEditors: SciK
+LastEditTime: 2022-07-10 00:25:55
+FilePath: \mypinyin\src\split\pycut.py
 
 拼音数据来源: https://blog.csdn.net/Likianta/article/details/87871183
 划分算法参考: https://www.jianshu.com/p/3e83129d70e2

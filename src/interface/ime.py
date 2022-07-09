@@ -1,3 +1,11 @@
+'''
+Description: IMeMainWindow class
+Author: SciK
+Date: 2022-07-07 21:37:04
+LastEditors: SciK
+LastEditTime: 2022-07-10 00:27:17
+FilePath: \mypinyin\src\interface\ime.py
+'''
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow
 from hmm.hmm import HMM
