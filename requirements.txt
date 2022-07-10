@@ -1,0 +1,6 @@
+# Created by: pipreqs ./ --encoding=utf8
+
+jieba==0.42.1
+pypinyin==0.46.0
+PyQt5==5.15.7
+tqdm==4.59.0
