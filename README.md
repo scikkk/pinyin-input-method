@@ -319,17 +319,17 @@ pyuic5.exe .\src\interface\imeui.ui -o .\src\interface\imeui.py
 
 #### 6.1 全拼效果
 
-![image-20220710154917038](images\nanjingdaxuerengongzhineng.png)
+![image-20220710154917038](https://github.com/scikkk/pinyin-input-method/blob/main/images/nanjingdaxuerengongzhineng.png)
 
 #### 6.2 首字母效果
 
-​            ![image-20220710160018976](D:\_WangKe\0\mypinyin\images\cxsj.png)![image-20220712004831098](images\njdx.png)
+​            ![image-20220710160018976](https://github.com/scikkk/pinyin-input-method/blob/main/images/cxsj.png)![image-20220712004831098](https://github.com/scikkk/pinyin-input-method/blob/main/images/njdx.png)
 
 
 
 #### 6.3 混合拼音效果
 
-![image-20220710155236180](images\njdxrgzhnxuey.png)
+![image-20220710155236180](https://github.com/scikkk/pinyin-input-method/blob/main/images/njdxrgzhnxuey.png)
 
 
 
