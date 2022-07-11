@@ -2,7 +2,7 @@
 Author: scikkk 203536673@qq.com
 Date: 2022-07-07 13:55:21
 LastEditors: scikkk
-LastEditTime: 2022-07-10 01:32:15
+LastEditTime: 2022-07-12 00:35:07
 Description: HMM class
 '''
 
@@ -28,20 +28,9 @@ class HMM:
         print('Loading start_log_probability.json ...')
         self.start_log_prob = load_json('model\\start_log_probability.json')
 
-        print('Loading emission_log_probability.json ...')
-        self.emiss_log_prob = load_json('model\\emission_log_probability.json')
-
-        print('Loading transition_log_probability.json ...')
-        self.trans_log_prob = load_json(
-            'model\\transition_log_probability.json')
-
         print('Loading reversed_emission.json ...')
         self.reversed_emission = load_json(
             'model\\reverse\\reversed_emission.json')
-
-        print('Loading reversed_transition.json ...')
-        self.rev_trans_log_prob = load_json(
-            'model\\reverse\\reversed_transition.json')
 
         print('Loading compute_nxt.json ...')
         self.compute_nxt = load_json('model\\reverse\\compute_nxt.json')

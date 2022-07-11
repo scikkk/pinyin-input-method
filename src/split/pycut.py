@@ -2,7 +2,7 @@
 Author: scikkk 203536673@qq.com
 Date: 2022-07-07 02:11:23
 LastEditors: scikkk
-LastEditTime: 2022-07-10 01:35:10
+LastEditTime: 2022-07-11 17:50:46
 Description: split Pinyin
 
 拼音数据来源: https://blog.csdn.net/Likianta/article/details/87871183
@@ -41,7 +41,7 @@ def correct(pinyin: str) -> str:
 
 def pysplit(pinyin: str, pinyin_table=pytable) -> tuple:
     """
-    Split pinyin by calling DP_split.
+    Split pinyin by calling recursion_split.
 
     :param pinyin: the Pinyin sequence to be split
     :param pinyin_table: Pinyin table
@@ -49,15 +49,15 @@ def pysplit(pinyin: str, pinyin_table=pytable) -> tuple:
     """
     res = []
     correct_res = []
-    DP_split(res, pinyin, pinyin_table)
+    recursion_split(res, pinyin, pinyin_table)
     if CUT_CONFIG['has_correct']:
         correct_pinyin = correct(pinyin)
         if correct_pinyin != pinyin:
-            DP_split(correct_res, correct_pinyin, pinyin_table)
+            recursion_split(correct_res, correct_pinyin, pinyin_table)
     return tuple(correct_res+res)
 
 
-def DP_split(res, pinyin, pinyin_table, pre_pinyin_list=[]) -> None:
+def recursion_split(res, pinyin, pinyin_table, pre_pinyin_list=[]) -> None:
     """
     Split the sequence recursively.
 
@@ -75,7 +75,7 @@ def DP_split(res, pinyin, pinyin_table, pre_pinyin_list=[]) -> None:
                 res.append(tuple(pinyin_list))
             else:
                 pinyin_list.append(pinyin[0:i])
-                DP_split(res, pinyin[i:], pinyin_table, pinyin_list)
+                recursion_split(res, pinyin[i:], pinyin_table, pinyin_list)
 
 
 if __name__ == '__main__':

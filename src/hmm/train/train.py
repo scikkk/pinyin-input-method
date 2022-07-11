@@ -2,7 +2,7 @@
 Author: scikkk 203536673@qq.com
 Date: 2022-07-08 16:28:16
 LastEditors: scikkk
-LastEditTime: 2022-07-10 01:27:56
+LastEditTime: 2022-07-11 23:22:51
 Description: Generate parameters of HMM
 '''
 
@@ -26,7 +26,6 @@ hmm_transition_path = 'model\\transition_log_probability.json'
 hmm_emission_path = 'model\\emission_log_probability.json'
 # 倒查表
 hmm_reversed_emission_path = 'model\\reverse\\reversed_emission.json'
-hmm_reversed_emission_transition_path = 'model\\reverse\\reversed_emission_transition.json'
 hmm_reversed_transition_path = 'model\\reverse\\reversed_transition.json'
 hmm_compute_nxt_path = 'model\\reverse\\compute_nxt.json'
 

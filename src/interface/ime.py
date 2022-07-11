@@ -2,7 +2,7 @@
 Author: scikkk 203536673@qq.com
 Date: 2022-07-07 21:37:04
 LastEditors: scikkk
-LastEditTime: 2022-07-10 01:45:30
+LastEditTime: 2022-07-12 00:40:28
 Description: IMeMainWindow class
 '''
 
@@ -12,6 +12,7 @@ from hmm.hmm import HMM
 from split.pycut import pysplit
 from interface.imeui import Ui_mainWindow
 from PyQt5.QtGui import QTextCursor
+from conf.config import IME_CONFIG
 
 
 class IMeMainWindow(QMainWindow):
@@ -46,7 +47,7 @@ class IMeMainWindow(QMainWindow):
     def process(self) -> None:
         """ This is the main program of input method. """
         pinyin = self.ui.lineEdit.text().replace("\'", '')
-        if 0 < len(pinyin) < 52:
+        if 0 < len(pinyin) <= IME_CONFIG['max_pinyin_len']:
             pinyin_lists = pysplit(pinyin)
             if pinyin_lists:
                 # do some reset
@@ -54,12 +55,13 @@ class IMeMainWindow(QMainWindow):
                 # translate
                 for pinyin_list in pinyin_lists[::-1]:
                     temp, left_pinyin_list = self.hmm.trans(pinyin_list)
-                    self.candidate += [temp[i:i + 10]
-                                       for i in range(0, len(temp), 10)]
+                    len_temp = len(temp)
+                    self.candidate += [temp[i:i + IME_CONFIG['candidate_per_page']]
+                                       for i in range(0, len_temp, IME_CONFIG['candidate_per_page'])]
                     self.pinyin_lists += [
-                        pinyin_list for _ in range(0, len(temp), 10)]
+                        pinyin_list for _ in range(0, len_temp, IME_CONFIG['candidate_per_page'])]
                     self.left_pinyin_lists += [
-                        left_pinyin_list for _ in range(0, len(temp), 10)]
+                        left_pinyin_list for _ in range(0, len_temp, IME_CONFIG['candidate_per_page'])]
                 # update screen
                 self.ui.textEdit.clear()
                 self.display_candidates(self.page_num)
@@ -113,7 +115,7 @@ class IMeMainWindow(QMainWindow):
         :param e: the key just released
         :type e: PyQt5.QtGui.QKeyEvent
         """
-        print(type(e))
+        # print(type(e))
         if e.key() in [Qt.Key_Left,  Qt.Key_Right]:
             return
         self.process()

@@ -2,7 +2,7 @@
 Author: scikkk 203536673@qq.com
 Date: 2022-07-07 09:46:10
 LastEditors: scikkk
-LastEditTime: 2022-07-10 01:28:39
+LastEditTime: 2022-07-11 17:09:20
 Description: corpus preprocessing
 '''
 
@@ -11,7 +11,8 @@ import re
 import jieba
 from tqdm import tqdm
 chinese = re.compile(
-    r'[\d|\u4e00-\u9fa5|\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b|\n]')
+    r'[\d|\u4e00-\u9fa5|\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b|\n]'
+)
 
 
 def gain_new_web():

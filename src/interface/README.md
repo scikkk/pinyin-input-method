@@ -10,7 +10,7 @@
    `pyuic5.exe testui.ui -o testui.py`
    `pyuic5.exe .\src\interface\imeui.ui -o .\src\interface\imeui.py`
 
-4. 打开转换成的`testui.py` 在文件末尾加入代码：
+4. 执行代码：
 
    ```python
    if __name__ == '__main__':

@@ -73,7 +73,7 @@ class Ui_mainWindow(object):
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "输入法"))
+        mainWindow.setWindowTitle(_translate("mainWindow", "拼音输入法-Scik"))
         self.label.setText(_translate("mainWindow", "拼         音"))
         self.label_2.setText(_translate("mainWindow", "候         选"))
         self.label_3.setText(_translate("mainWindow", "文         本"))
