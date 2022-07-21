@@ -2,7 +2,7 @@
 Author: scikkk 203536673@qq.com
 Date: 2022-07-07 13:55:21
 LastEditors: scikkk
-LastEditTime: 2022-07-12 00:35:07
+LastEditTime: 2022-07-21 11:48:58
 Description: HMM class
 '''
 
@@ -14,10 +14,7 @@ class HMM:
     Hidden Markov Model
 
     :param start_log_prob: start_log_prob[Chinese character] = Logarithmic probability
-    :param emiss_log_prob: emission_log_prob[Chinese character] = {Pinyin_1: Prob_1, ...}
-    :param trans_log_prob: transition_log_prob[Previous Chinese character] = {Post Chinese character, Logarithmic probability}
     :param reversed_emission: reversed_emission_log_prob[Pinyin] = {Character_1: Prob_1, ...}
-    :param rev_trans_log_prob: reversed_transition_log_prob[Post Chinese character] = {Previous Chinese character, Logarithmic probability}
     :param compute_nxt: compute_nxt[Previous Chinese character][Pinyin] = (most likely Post Chinese character, Prob)
     """
 
