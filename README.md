@@ -330,10 +330,6 @@ pyuic5.exe .\src\interface\imeui.ui -o .\src\interface\imeui.py
 
 ![image-20220710155236180](https://github.com/scikkk/pinyin-input-method/blob/main/images/njdxrgzhnxuey.png)
 
-pyinstaller -F -w -i g:\2345Downloads\logo.ico src\main.py 
---hidden-import src\hmm\hmm.py --hidden-import src\interface\ime.py --hidden-import src\interface\imeui.py
---hidden-import src\split\pycut.py --hidden-import src\conf\config.py --hidden-import mainWindow.py
-
 
 ### 7 遇到的问题
 
